@@ -1,0 +1,31 @@
+<template name="welcomeView">
+
+  <div class="container content-wrapper">
+
+    <h1 class="text-center">Bem-vindo ao Meteor!</h1>
+
+    <br>
+    
+    {{#if isDeviceReady}}
+      <p>Dispositivo: {{getDevice}}</p>
+
+      <br>
+    {{/if}}
+
+    {{! place the list of available sensors here }}
+
+    {{> sensorsList}}
+  </div>
+</template>
+
+<template name="sensorsList">
+  
+  {{#if isCordova}}
+    <ul class="sensors-checklist">
+      <li>Giroscópio: {{#if checkGyroscope}}<span class="sensor-is-ready">OK</span>{{else}}<span class="sensor-not-ready">NO</span>{{/if}}</li>
+      <li>Altímetro: {{#if checkAltimeter}}<span class="sensor-is-ready">OK</span>{{else}}<span class="sensor-not-ready">NO</span>{{/if}}</li>
+    </ul>
+  {{else}}
+    <p class="text-center">Este não é um dispositivo móvel</p>
+  {{/if}}
+</template>

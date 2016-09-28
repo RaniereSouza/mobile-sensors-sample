@@ -1,0 +1,57 @@
+/* Sass and CSS declarations go here */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$meteor-red: #de4f4f;
+$cordova-blue: #4cc2e4;
+$cordova-active-blue: #2c7185;
+
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -os-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+
+
+
+
+body {
+	font-family: 'Roboto', Verdana, sans-serif;
+}
+
+.content-wrapper {
+	@include calc('min-height', '100vh - 30px'); 
+	//height: 100vh;
+}
+
+.main-header {
+	height: 60px;
+	background-color: $meteor-red;
+	color: #fff;
+}
+
+//### welcomeView ###
+ul.sensors-checklist {
+    list-style: none;
+    padding:0;
+    margin:0;
+    font-size: 20px;
+    li { 
+	    padding-left: 1em; 
+	    text-indent: -.7em;
+	    &:before {
+		    content: "• ";
+		    color: $cordova-blue;
+		}
+	}
+}
+
+.sensor-is-ready {
+	color: $cordova-blue;
+}
+
+.sensor-not-ready {
+	color: red;
+}
+//### End welcomeView ###
