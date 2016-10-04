@@ -5,3 +5,9 @@ Router.route('/', {
 	controller: MainController,
 	action: 'welcome'
 });
+
+Router.route('/gyroscope', {
+	name: 'gyroscopeView',
+	controller: MainController,
+	action: 'gyroscope'
+});

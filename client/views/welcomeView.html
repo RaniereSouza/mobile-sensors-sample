@@ -22,7 +22,7 @@
   
   {{#if isCordova}}
     <ul class="sensors-checklist">
-      <li>Giroscópio: {{#if checkGyroscope}}<span class="sensor-is-ready">OK</span>{{else}}<span class="sensor-not-ready">NO</span>{{/if}}</li>
+      <li>Giroscópio: {{#if checkGyroscope}}<span class="sensor-is-ready"><a href="{{pathFor 'gyroscopeView'}}">OK</a></span>{{else}}<span class="sensor-not-ready">NO</span>{{/if}}</li>
       <li>Altímetro: {{#if checkAltimeter}}<span class="sensor-is-ready">OK</span>{{else}}<span class="sensor-not-ready">NO</span>{{/if}}</li>
     </ul>
   {{else}}

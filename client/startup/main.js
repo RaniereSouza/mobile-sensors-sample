@@ -7,6 +7,8 @@ Meteor.startup(function () {
 	/* body... */
 	if (Meteor.isCordova) {
 
+		StatusBar.backgroundColorByHexString('#a83636');
+
 		console.log(device.cordova);
 
 		Session.set('isDeviceReady', true);

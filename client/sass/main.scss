@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 $meteor-red: #de4f4f;
+$meteor-active-red: #a83636;
 $cordova-blue: #4cc2e4;
 $cordova-active-blue: #2c7185;
 
@@ -29,6 +30,23 @@ body {
 	height: 60px;
 	background-color: $meteor-red;
 	color: #fff;
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+}
+
+.main-footer {
+	//background-color: #333;
+	color: $cordova-active-blue;
+}
+
+.sensor-display {
+	margin: 0 -15px;
+	padding: 10px;
+	background-color: #333;
+	color: $cordova-blue;
+	font-size: 18px;
 }
 
 //### welcomeView ###
@@ -38,6 +56,7 @@ ul.sensors-checklist {
     margin:0;
     font-size: 20px;
     li { 
+    	margin-bottom: 10px;
 	    padding-left: 1em; 
 	    text-indent: -.7em;
 	    &:before {
@@ -49,6 +68,10 @@ ul.sensors-checklist {
 
 .sensor-is-ready {
 	color: $cordova-blue;
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
 }
 
 .sensor-not-ready {

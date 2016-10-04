@@ -1,0 +1,17 @@
+<template name="gyroscopeView">
+	
+	<div class="container content-wrapper">
+
+		<h1 class="text-center">Giroscópio</h1>
+
+		<br>
+
+		<div class="sensor-display text-center">
+			{{#with gyroscopeData}}
+				x = {{x}}; <br>
+				y = {{y}}; <br>
+				z = {{z}};
+			{{/with}}
+		</div>
+	</div>
+</template>
