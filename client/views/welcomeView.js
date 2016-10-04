@@ -56,6 +56,32 @@ Template.sensorsList.helpers({
 	}
 });
 
+Template.sensorsList.onCreated(function () {
+
+	var instance = this;
+
+	instance.exitApp = function () {
+		
+		navigator.app.exitApp();
+	}
+
+	if (Session.get('isDeviceReady') === true) {
+
+		document.addEventListener('backbutton', instance.exitApp, false);
+	}
+});
+
 Template.sensorsList.onRendered(function () {
+
+});
+
+Template.sensorsList.onDestroyed(function () {
+
+	var instance = this;
+
+	if (typeof(instance.exitApp) !== 'undefined') {
+
+		document.removeEventListener('backbutton', instance.exitApp, false);
+	}
 
 });
