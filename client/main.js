@@ -2,6 +2,9 @@ import { Meteor } from 'meteor/meteor';
 import { Session } from 'meteor/session';
 import { Template } from 'meteor/templating';
 
+import '../imports/lib/routerConfig.js';
+import '../imports/client/routes/sensorsRouter.js'
+
 //### Granting that the mobile device is ready ###
 Meteor.startup(function () {
 	/* body... */

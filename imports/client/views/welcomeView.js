@@ -7,7 +7,7 @@ import './welcomeView.html';
 Template.welcomeView.helpers({
 	getDevice: function () {
 		/* body... */
-		var realModelName = '';
+		let realModelName = '';
 
 		if (Template.deviceModels[device.model]) {
 
@@ -25,7 +25,7 @@ Template.sensorsList.helpers({
 		/* body... */
 		if (Session.get('isDeviceReady') === true) {
 
-			if (navigator.gyroscope) return true;
+			if (sensors && (sensors.enableSensor('GYROSCOPE') !== 3)) return true;
 		}
 
 		return false;
@@ -36,7 +36,7 @@ Template.sensorsList.helpers({
 
 			if (altimeter) {
 
-				//var result = new ReactiveVar();
+				//let result = new ReactiveVar();
 
 				//altimeter.isAltimeterAvailable(function (response) {
 					/* Success callback */
@@ -58,7 +58,7 @@ Template.sensorsList.helpers({
 
 Template.sensorsList.onCreated(function () {
 
-	var instance = this;
+	let instance = this;
 
 	instance.exitApp = function () {
 		
@@ -77,7 +77,7 @@ Template.sensorsList.onRendered(function () {
 
 Template.sensorsList.onDestroyed(function () {
 
-	var instance = this;
+	let instance = this;
 
 	if (typeof(instance.exitApp) !== 'undefined') {
 

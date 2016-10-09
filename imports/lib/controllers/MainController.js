@@ -1,5 +1,9 @@
 import { RouteController } from 'meteor/iron:router';
 
+import '/imports/client/views/welcomeView.js';
+import '/imports/client/views/gyroscopeView.js';
+
+
 MainController = RouteController.extend({
 	welcome: function () {
 		
@@ -16,3 +20,5 @@ MainController = RouteController.extend({
 		}
 	}
 });
+
+export default MainController;
