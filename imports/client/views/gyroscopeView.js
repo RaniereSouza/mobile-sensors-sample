@@ -22,7 +22,7 @@ Template.gyroscopeView.onCreated(function () {
 
 	let instance = this;
 	
-	instance.gyroscopeData = new ReactiveVar(/*{x: 0.0, y: 0.0, z: 0.0}*/);
+	instance.gyroscopeData = new ReactiveVar(/*{x: 0.0, y: 0.0, z: 0.0}*/ [0.0, 0.0, 0.0]);
 	
 	if (Session.get('isDeviceReady') === true) {
 
@@ -40,16 +40,19 @@ Template.gyroscopeView.onCreated(function () {
 			//console.log('watch sensor failed');
 		//}, {frequency: 100});
 
-		instance.gyroscopeWatchId = Meteor.setInterval(function () {
-			
-			sensors.getState(function (result) {
-				/* Success callback */
+		if (sensors) {
 
-				//console.log(result);
+			instance.gyroscopeWatchId = Meteor.setInterval(function () {
+				
+				sensors.getState(function (result) {
+					/* Success callback */
 
-				instance.gyroscopeData.set(result);
-			});
-		}, 100);		
+					//console.log(result);
+
+					instance.gyroscopeData.set(result);
+				});
+			}, 100);
+		}		
 	}
 });
 
